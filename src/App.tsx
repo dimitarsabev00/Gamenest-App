@@ -1,5 +1,11 @@
+import { Home } from "./screens";
+
 const App = () => {
-  return <h1>Gamenest App</h1>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };
 
 export default App;
