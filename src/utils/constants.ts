@@ -1,4 +1,4 @@
-export const navListData = [
+export const navListItems = [
   { id: 1, target: "home", name: "Home", icon: "bi-house-door", active: true },
   {
     id: 2,
