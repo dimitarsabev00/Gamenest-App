@@ -1,6 +1,5 @@
-import './App.scss'
 const App = () => {
-  return <div>Gamenest App</div>;
+  return <h1>Gamenest App</h1>;
 };
 
 export default App;
