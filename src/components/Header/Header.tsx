@@ -1,10 +1,26 @@
+import React, { useState } from "react";
 import defaultAvatarMan from "../../assets/images/default-image-man.png";
 import "./styles.scss";
 
-const Header = () => {
+type HeaderProps = {
+  toggleActive: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ toggleActive }) => {
+  const [menu, setMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setMenu(!menu);
+    toggleActive();
+  };
+
   return (
     <header>
-      <a href="#" className="menu">
+      <a
+        href="#"
+        className={`menu ${menu ? "active" : undefined}`}
+        onClick={toggleMenu}
+      >
         <i className="bi bi-sliders"></i>
       </a>
       <div className="userItems">

@@ -97,13 +97,13 @@
     overflow: hidden;
     align-items: center;
 
-    .brand,
-    .navName {
+    .brand-name,
+    .navItemName {
       display: none;
     }
 
     .nav li a {
-      font-size: 1.8em;
+      font-size: 1.8rem;
     }
 
     .social {
@@ -125,8 +125,8 @@
       left: -100px;
     }
 
-    .brand,
-    .navName {
+    .brand-name,
+    .navItemName {
       display: none;
     }
 

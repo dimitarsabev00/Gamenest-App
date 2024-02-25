@@ -4,9 +4,12 @@ import NavListItem from "./NavListItem";
 import SocialListItem from "./SocialListItem";
 import "./styles.scss";
 
-const SideMenu: React.FC = () => {
+type SideMenuProps = {
+  active: boolean;
+};
+const SideMenu: React.FC<SideMenuProps> = ({ active }) => {
   return (
-    <div className="sideMenu-container">
+    <div className={`sideMenu-container ${active ? "active" : undefined}`}>
       <a href="#" className="logo">
         <i className="bi bi-controller"></i>
         <span className="brand-name">Gamenest</span>
