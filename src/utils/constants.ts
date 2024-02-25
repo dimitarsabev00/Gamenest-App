@@ -30,3 +30,9 @@ export const navListItems = [
   },
   { id: 4, target: "bag", name: "My Bag", icon: "bi-bag", active: false },
 ];
+export const socialListItems = [
+  { id: 1, icon: "bi-meta" },
+  { id: 1, icon: "bi-twitter-x" },
+  { id: 1, icon: "bi-youtube" },
+  { id: 1, icon: "bi-share" },
+];
