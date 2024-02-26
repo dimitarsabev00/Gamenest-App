@@ -46,7 +46,7 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({ games }) => {
         {games.map((game) => (
           <SwiperSlide key={game._id}>
             <div className="gameSlider">
-              <img src={dummyIMG} />
+              <img src={game.img} />
               <div className={`video ${active ? "active" : undefined}`}>
                 <iframe
                   width="1280"
