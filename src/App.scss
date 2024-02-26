@@ -34,4 +34,43 @@
       transition: 1s;
     }
   }
+  section {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    padding: 0 30px 0 30px;
+    bottom: 0;
+    opacity: 0;
+    transition: ease-in-out 1s;
+    transform-origin: bottom;
+    z-index: 1000;
+    &.active {
+      top: 100px;
+      height: auto;
+      overflow-y: visible;
+      opacity: 1;
+    }
+  }
+
+  section::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main-screen-container {
+    padding: 20px;
+  }
+
+  .select-tab-content {
+    width: 100%;
+  }
+
+  .select-tab-content.active {
+    width: 100%;
+  }
+
+  section {
+    padding: 5px;
+  }
 }
