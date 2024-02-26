@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className="main-screen-container">
+    <main>
       <SideMenu active={active} />
       <div className={`select-tab-content ${active ? "active" : undefined}`}>
         <Header toggleActive={handleToggleActive} />

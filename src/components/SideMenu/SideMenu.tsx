@@ -12,7 +12,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ active }) => {
     <div className={`sideMenu-container ${active ? "active" : undefined}`}>
       <a href="#" className="logo">
         <i className="bi bi-controller"></i>
-        <span className="brand-name">Gamenest</span>
+        <span className="brand">Gamenest</span>
       </a>
       <ul className="nav">
         {navListItems.map((item) => (

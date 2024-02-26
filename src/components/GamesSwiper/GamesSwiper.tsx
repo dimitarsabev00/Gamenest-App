@@ -12,7 +12,6 @@ import "./styles.scss";
 // import required modules
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import { Game } from "../../Types";
-import dummyIMG from "../../dummy-api-data/diablo-3-bg.jpeg";
 
 type GamesSwiperProps = {
   games: Game[];
@@ -39,7 +38,10 @@ const GamesSwiper: React.FC<GamesSwiperProps> = ({ games }) => {
           modifier: 1,
           slideShadows: true,
         }}
-        // autoplay={{ delay: 2500, disableOnInteraction: false }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         modules={[EffectCoverflow, Navigation, Autoplay]}
         className="gameSwiper"
       >

@@ -1,7 +1,7 @@
 @import "../../base.scss";
 
 .sideMenu-container {
-  width: 25%;
+  width: 20%;
   height: 100%;
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: column;
   transition: 1s;
-
   .logo {
     font-family: "Bauhaus 93";
     position: relative;
@@ -26,14 +25,12 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-
   .nav {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: 15px;
-
     li a {
       text-decoration: none;
       color: #ffffff;
@@ -48,7 +45,6 @@
       padding: 10px 20px;
       width: 100%;
       transition: 0.5s;
-
       &:hover,
       &.active {
         box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -56,7 +52,6 @@
       }
     }
   }
-
   .social {
     position: absolute;
     bottom: 50px;
@@ -65,18 +60,15 @@
     list-style: none;
     gap: 20px;
     transition: 0.5s;
-
     li a {
       text-decoration: none;
       color: #ffffff;
       font-size: 1.5rem;
       transition: 0.3s;
-
       &:hover {
         color: $color-second;
       }
     }
-
     li .share {
       background: $color-second;
       padding: 10px;
@@ -84,20 +76,18 @@
       height: 35px;
       border-radius: 50%;
       transition: 0.3s;
-
       &:hover {
         background: $color-primary;
       }
     }
   }
-
   &.active {
     width: 7%;
     transition: 1s;
     overflow: hidden;
     align-items: center;
 
-    .brand-name,
+    .brand,
     .navItemName {
       display: none;
     }
@@ -125,7 +115,7 @@
       left: -100px;
     }
 
-    .brand-name,
+    .brand,
     .navItemName {
       display: none;
     }

@@ -113,13 +113,11 @@
       background: $color-primary;
     }
   }
-
-  .gameRating {
-    font-size: 1.3em;
-    color: $color-second;
-
-    i {
-      margin-left: 2px;
-    }
+}
+.gameCard .gameRating {
+  font-size: 1.3em;
+  color: $color-second;
+  i {
+    margin-left: 2px;
   }
 }
