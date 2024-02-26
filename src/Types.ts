@@ -1,6 +1,7 @@
-export interface  Game {
+export interface Game {
   _id: number;
   title: string;
+  img: string;
   description: string;
   level: string;
   category: string;
