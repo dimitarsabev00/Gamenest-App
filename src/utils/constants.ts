@@ -8,36 +8,36 @@ import FortniteSpiderMan from "../dummy-api-data/fortnite-bg.jpeg";
 import Diablo3 from "../dummy-api-data/diablo-3-bg.jpeg";
 
 export const navListItems = [
-  { id: 1, target: "home", name: "Home", icon: "bi-house-door", active: true },
+  { _id: 1, target: "home", name: "Home", icon: "bi-house-door", active: true },
   {
-    id: 2,
+    _id: 2,
     target: "games",
     name: "Games",
     icon: "bi-window-stack",
     active: false,
   },
   {
-    id: 2,
+    _id: 3,
     target: "stores",
     name: "Stores",
     icon: "bi-window-stack",
     active: false,
   },
   {
-    id: 2,
+    _id: 4,
     target: "creators",
     name: "Creators",
     icon: "bi-window-stack",
     active: false,
   },
   {
-    id: 3,
+    _id: 5,
     target: "library",
     name: "My Library",
     icon: "bi-heart",
     active: false,
   },
-  { id: 4, target: "bag", name: "My Bag", icon: "bi-bag", active: false },
+  { _id: 6, target: "bag", name: "My Bag", icon: "bi-bag", active: false },
 ];
 export const socialListItems = [
   { id: 1, icon: "bi-meta" },

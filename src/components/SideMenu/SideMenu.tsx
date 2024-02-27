@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { navListItems, socialListItems } from "../../utils/constants";
 import NavListItem from "./NavListItem";
 import SocialListItem from "./SocialListItem";
@@ -8,6 +8,16 @@ type SideMenuProps = {
   active: boolean;
 };
 const SideMenu: React.FC<SideMenuProps> = ({ active }) => {
+  const [navData, setNavData] = useState(navListItems);
+
+  const handleNavClick = (id: number) => {
+    const newNavData = navData.map((nav) => {
+      nav.active = false;
+      if (nav._id === id) nav.active = true;
+      return nav;
+    });
+    setNavData(newNavData);
+  };
   return (
     <div className={`sideMenu-container ${active ? "active" : undefined}`}>
       <a href="#" className="logo">
@@ -15,8 +25,12 @@ const SideMenu: React.FC<SideMenuProps> = ({ active }) => {
         <span className="brand">Gamenest</span>
       </a>
       <ul className="nav">
-        {navListItems.map((item) => (
-          <NavListItem key={item.id} item={item} />
+        {navData.map((item) => (
+          <NavListItem
+            key={item._id}
+            item={item}
+            handleNavClick={handleNavClick}
+          />
         ))}
       </ul>
       <ul className="social">
