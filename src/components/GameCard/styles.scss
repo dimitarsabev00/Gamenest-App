@@ -30,7 +30,6 @@
     background: $color-bgColor;
     padding: 5px;
     border-radius: 0 0 0 20px;
-    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +41,6 @@
   }
 
   span {
-    color: #ffffff;
   }
 
   .gameFeature {
@@ -63,7 +61,6 @@
     font-family: "Bauhaus 93";
     text-transform: uppercase;
     font-size: 1.3rem;
-    color: #ffffff;
   }
 
   .gamePrice {
@@ -97,7 +94,6 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    color: #ffffff;
     background: $color-second;
     padding: 10px;
     width: 40px;
