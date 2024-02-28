@@ -9,12 +9,12 @@ const App = () => {
   const [active, setActive] = useState(false);
   const [games, setGames] = useState<Game[]>([]);
 
-  const homeRef = useRef(null);
-  const gamesRef = useRef(null);
-  const storesRef = useRef(null);
-  const creatorsRef = useRef(null);
-  const myLibraryRef = useRef(null);
-  const myBagRef = useRef(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const gamesRef = useRef<HTMLDivElement>(null);
+  const storesRef = useRef<HTMLDivElement>(null);
+  const creatorsRef = useRef<HTMLDivElement>(null);
+  const myLibraryRef = useRef<HTMLDivElement>(null);
+  const myBagRef = useRef<HTMLDivElement>(null);
 
   const sections = [
     {
