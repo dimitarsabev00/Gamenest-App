@@ -6,16 +6,18 @@ import "./styles.scss";
 
 type SideMenuProps = {
   active: boolean;
+  sectionActive: (target: string) => void;
 };
-const SideMenu: React.FC<SideMenuProps> = ({ active }) => {
+const SideMenu: React.FC<SideMenuProps> = ({ active, sectionActive }) => {
   const [navData, setNavData] = useState(navListItems);
 
-  const handleNavClick = (id: number) => {
+  const handleNavClick = (id: number, target: string) => {
     const newNavData = navData.map((nav) => {
       nav.active = false;
       if (nav._id === id) nav.active = true;
       return nav;
     });
+    sectionActive(target);
     setNavData(newNavData);
   };
   return (

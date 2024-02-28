@@ -5,11 +5,12 @@ import { GameCard, GamesSwiper } from "../../components";
 
 type HomeProps = {
   games: Game[];
+  reference: React.RefObject<HTMLElement>;
 };
 
-const Home: React.FC<HomeProps> = ({ games }) => {
+const Home: React.FC<HomeProps> = ({ games, reference }) => {
   return (
-    <section id="home" className="home active">
+    <section id="home" className="home active" ref={reference}>
       <div className="container-fluid">
         <div className="row">
           <GamesSwiper games={games} />

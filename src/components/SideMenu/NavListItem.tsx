@@ -8,7 +8,7 @@ type NavListItemProps = {
     active: boolean;
     _id: number;
   };
-  handleNavClick: (_id: number) => void;
+  handleNavClick: (_id: number, target: string) => void;
 };
 
 const NavListItem: React.FC<NavListItemProps> = ({ item, handleNavClick }) => {
@@ -17,7 +17,7 @@ const NavListItem: React.FC<NavListItemProps> = ({ item, handleNavClick }) => {
       <a
         href="#"
         className={`${item.active ? "active" : undefined}`}
-        onClick={() => handleNavClick(item._id)}
+        onClick={() => handleNavClick(item._id, item.target)}
       >
         <i className={`bi ${item.icon}`}></i>{" "}
         <span className="navItemName">{item.name}</span>
