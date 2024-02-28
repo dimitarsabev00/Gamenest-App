@@ -54,10 +54,11 @@ const App = () => {
 
   const handleSectionActive = (target: string) => {
     sections.forEach((section) => {
-      if (section.ref.current) {
-        section.ref.current.classList.remove("active");
-        if (section.ref.current.id === target) {
-          section.ref.current.classList.add("active");
+      const ref = section.ref as React.MutableRefObject<HTMLDivElement>;
+      if (ref.current) {
+        ref.current.classList.remove("active");
+        if (ref.current.id === target) {
+          ref.current.classList.add("active");
         }
       }
     });
