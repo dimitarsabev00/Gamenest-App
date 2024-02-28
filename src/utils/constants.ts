@@ -20,24 +20,24 @@ export const navListItems = [
     _id: 3,
     target: "stores",
     name: "Stores",
-    icon: "bi-window-stack",
+    icon: "bi-shop-window",
     active: false,
   },
   {
     _id: 4,
     target: "creators",
     name: "Creators",
-    icon: "bi-window-stack",
+    icon: "bi-people",
     active: false,
   },
   {
     _id: 5,
-    target: "library",
+    target: "myLibrary",
     name: "My Library",
     icon: "bi-heart",
     active: false,
   },
-  { _id: 6, target: "bag", name: "My Bag", icon: "bi-bag", active: false },
+  { _id: 6, target: "myBag", name: "My Bag", icon: "bi-bag", active: false },
 ];
 export const socialListItems = [
   { id: 1, icon: "bi-meta" },
