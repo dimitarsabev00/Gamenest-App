@@ -53,12 +53,13 @@ const App = () => {
   };
 
   const handleSectionActive = (target: string) => {
-    sections.map((section) => {
-      section.ref.current.classList.remove("active");
-      if (section.ref.current.id === target) {
-        section.ref.current.classList.add("active");
+    sections.forEach((section) => {
+      if (section.ref.current) {
+        section.ref.current.classList.remove("active");
+        if (section.ref.current.id === target) {
+          section.ref.current.classList.add("active");
+        }
       }
-      return section;
     });
   };
 
