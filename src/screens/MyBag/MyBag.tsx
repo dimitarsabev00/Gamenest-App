@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ShopBagItem from "./ShopBagItem";
 import "./styles.scss";
 import { Game } from "../../Types";
+import { useDispatch } from "react-redux";
+import { setGeneralFields } from "../../store";
 
 type MyBagProps = {
   reference: React.RefObject<HTMLElement>;
@@ -9,11 +11,16 @@ type MyBagProps = {
 };
 const MyBag: React.FC<MyBagProps> = ({ myBag, reference }) => {
   const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
   const handleTotalPayment = () => {
     let total = myBag
       .map((item) => item.price * (1 - item.discount))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     return total;
+  };
+
+  const handleCheckout = () => {
+    dispatch(setGeneralFields({ myBag: [] }));
   };
 
   useEffect(() => {
@@ -61,7 +68,10 @@ const MyBag: React.FC<MyBagProps> = ({ myBag, reference }) => {
               <div className="col-lg-2 align-items-center">
                 <p className="itemCount">Total Items: {myBag.length}</p>
               </div>
-              <div className="col-lg-10 d-flex justify-content-end">
+              <div
+                className="col-lg-10 d-flex justify-content-end"
+                onClick={handleCheckout}
+              >
                 <div className="payment">
                   Total: ${total.toFixed(2)}
                   <a href="#">
