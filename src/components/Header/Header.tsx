@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import defaultAvatarMan from "../../assets/images/default-image-man.png";
 import "./styles.scss";
+import { Game } from "../../Types";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 type HeaderProps = {
   toggleActive: () => void;
@@ -8,6 +11,9 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ toggleActive }) => {
   const [menu, setMenu] = useState(false);
+  const myLibrary: Game[] = useSelector(
+    (state: RootState) => state.generalSlice.myLibrary
+  );
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -26,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ toggleActive }) => {
       <div className="userItems">
         <a href="#" className="icon">
           <i className="bi bi-heart-fill"></i>
-          <span className="like">{0}</span>
+          <span className="like">{myLibrary.length}</span>
         </a>
         <a href="#" className="icon">
           <i className="bi bi-bag-fill"></i>
