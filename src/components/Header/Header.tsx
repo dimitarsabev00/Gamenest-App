@@ -14,6 +14,9 @@ const Header: React.FC<HeaderProps> = ({ toggleActive }) => {
   const myLibrary: Game[] = useSelector(
     (state: RootState) => state.generalSlice.myLibrary
   );
+  const myBag: Game[] = useSelector(
+    (state: RootState) => state.generalSlice.myBag
+  );
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -36,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ toggleActive }) => {
         </a>
         <a href="#" className="icon">
           <i className="bi bi-bag-fill"></i>
-          <span className="bag">{0}</span>
+          <span className="bag">{myBag.length}</span>
         </a>
         <div className="avatar">
           <a href="#">
