@@ -18,6 +18,14 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
     dispatch(setGeneralFields({ myLibrary: [...myLibrary, game] }));
   };
 
+  const handleRemoveFromLibrary = (game: Game) => {
+    dispatch(
+      setGeneralFields({
+        myLibrary: myLibrary.filter((item) => item._id !== game._id),
+      })
+    );
+  };
+
   return (
     <div className="col-xl-3 col-lg-4 col-md-6">
       <div className="gameCard">
@@ -25,7 +33,11 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         <a
           href="#"
           className={`like ${myLibrary.includes(game) ? "active" : undefined}`}
-          onClick={() => handleAddToLibrary(game)}
+          onClick={
+            myLibrary.includes(game)
+              ? () => handleRemoveFromLibrary(game)
+              : () => handleAddToLibrary(game)
+          }
         >
           <i className="bi bi-heart-fill"></i>
         </a>
