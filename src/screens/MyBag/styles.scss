@@ -1,1 +1,67 @@
 @import "../../base.scss";
+.myBag {
+  .shopBagTable {
+    margin-top: 50px;
+    color: #ffffff;
+    border-radius: 20px;
+    background: $color-bgColor;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.35);
+    thead tr {
+      font-size: 1.3rem;
+      th {
+        background: transparent;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .itemCount {
+    font-size: 1.3rem;
+  }
+
+  .payment {
+    display: inline-flex;
+    align-items: center;
+    gap: 50px;
+    font-size: 1.3rem;
+    color: #ffffff;
+  }
+
+  .payment a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: $color-bgColor;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.35);
+  }
+
+  .shopBagItem {
+    margin-bottom: 20px;
+    tr {
+      margin-bottom: 20px !important;
+    }
+    td,
+    th {
+      background: transparent !important;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+    a {
+      color: #ffffff;
+      font-size: 1.6rem;
+    }
+    img {
+      width: 120px;
+      height: 70px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+    }
+  }
+}

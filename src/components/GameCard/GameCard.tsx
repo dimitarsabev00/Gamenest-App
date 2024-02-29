@@ -3,6 +3,7 @@ import { Game } from "../../Types";
 import GameRating from "./GameRating";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, setGeneralFields } from "../../store";
+import "./styles.scss";
 
 type GameCardProps = {
   game: Game;
@@ -12,6 +13,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
   const myLibrary: Game[] = useSelector(
     (state: RootState) => state.generalSlice.myLibrary
   );
+  const myBag: Game[] = useSelector((state: RootState) => state.generalSlice.myBag);
 
   const dispatch = useDispatch();
   const handleAddToLibrary = (game: Game) => {
@@ -24,6 +26,11 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         myLibrary: myLibrary.filter((item) => item._id !== game._id),
       })
     );
+  };
+
+  const handleAddToBag = (game: Game) => {
+    if (myBag.includes(game)) return;
+    dispatch(setGeneralFields({ myBag: [...myBag, game] }));
   };
 
   return (
@@ -59,7 +66,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
             ${((1 - game.discount) * game.price).toFixed(2)}
           </span>
         </div>
-        <a className="addBag" href="#">
+        <a className="addBag" href="#" onClick={() => handleAddToBag(game)}>
           <i className="bi bi-bag-plus-fill"></i>
         </a>
       </div>

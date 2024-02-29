@@ -69,7 +69,12 @@ const App = () => {
     setGames(gamesData);
   }, []);
 
-  const myLibrary = useSelector((state:RootState) => state.generalSlice.myLibrary);
+  const myLibrary: Game[] = useSelector(
+    (state: RootState) => state.generalSlice.myLibrary
+  );
+  const myBag: Game[] = useSelector(
+    (state: RootState) => state.generalSlice.myBag
+  );
 
   return (
     <main>
@@ -88,7 +93,9 @@ const App = () => {
           {games && games.length > 0 && (
             <MyLibrary myLibrary={myLibrary} reference={myLibraryRef} />
           )}
-          {games && games.length > 0 && <MyBag reference={myBagRef} />}
+          {games && games.length > 0 && (
+            <MyBag myBag={myBag} reference={myBagRef} />
+          )}
         </div>
       </div>
     </main>
