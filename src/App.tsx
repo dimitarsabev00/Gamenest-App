@@ -4,7 +4,8 @@ import "./App.scss";
 import { Creators, Games, Home, MyBag, MyLibrary, Stores } from "./screens";
 import { gamesData } from "./utils/constants";
 import { Game } from "./Types";
-
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 const App = () => {
   const [active, setActive] = useState(false);
   const [games, setGames] = useState<Game[]>([]);
@@ -67,6 +68,9 @@ const App = () => {
   useEffect(() => {
     setGames(gamesData);
   }, []);
+
+  const myLibrary = useSelector((state:RootState) => state.generalSlice.myLibrary);
+
   return (
     <main>
       <SideMenu active={active} sectionActive={handleSectionActive} />
@@ -81,7 +85,9 @@ const App = () => {
           )}
           {games && games.length > 0 && <Stores reference={storesRef} />}
           {games && games.length > 0 && <Creators reference={creatorsRef} />}
-          {games && games.length > 0 && <MyLibrary reference={myLibraryRef} />}
+          {games && games.length > 0 && (
+            <MyLibrary myLibrary={myLibrary} reference={myLibraryRef} />
+          )}
           {games && games.length > 0 && <MyBag reference={myBagRef} />}
         </div>
       </div>

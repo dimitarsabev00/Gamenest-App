@@ -8,5 +8,6 @@ const store = configureStore({
     generalSlice,
   },
 });
+export type RootState = ReturnType<typeof store.getState>;
 
 export default store;

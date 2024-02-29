@@ -34,13 +34,11 @@
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+    cursor: pointer;
 
-    &.active {
-      color: $color-second;
+    &.active .bi-heart-fill{
+      color: $color-second !important;
     }
-  }
-
-  span {
   }
 
   .gameFeature {

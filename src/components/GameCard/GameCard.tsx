@@ -1,17 +1,32 @@
 import React from "react";
 import { Game } from "../../Types";
 import GameRating from "./GameRating";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, setGeneralFields } from "../../store";
 
 type GameCardProps = {
   game: Game;
 };
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
+  const myLibrary: Game[] = useSelector(
+    (state: RootState) => state.generalSlice.myLibrary
+  );
+
+  const dispatch = useDispatch();
+  const handleAddToLibrary = (game: Game) => {
+    dispatch(setGeneralFields({ myLibrary: [...myLibrary, game] }));
+  };
+
   return (
     <div className="col-xl-3 col-lg-4 col-md-6">
       <div className="gameCard">
         <img src={game.img} alt={game.title} className="img-fluid" />
-        <a href="#" className={`like `}>
+        <a
+          href="#"
+          className={`like ${myLibrary.includes(game) ? "active" : undefined}`}
+          onClick={() => handleAddToLibrary(game)}
+        >
           <i className="bi bi-heart-fill"></i>
         </a>
         <div className="gameFeature">
