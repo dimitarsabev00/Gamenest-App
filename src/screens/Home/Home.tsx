@@ -19,11 +19,11 @@ const Home: React.FC<HomeProps> = ({ games, reference }) => {
           <div className="col-lg-6">
             <h2 className="sectionTitle">Top Popular Games</h2>
           </div>
-          <div className="col-lg-6 d-flex justify-content-end align-items-center">
+          {/* <div className="col-lg-6 d-flex justify-content-end align-items-center">
             <a href="#" className="viewMore">
               View More Games <i className="bi bi-arrow-right"></i>
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="row cards">
           {games.slice(0, 4).map((game) => (
