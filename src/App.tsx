@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Header, SideMenu } from "./components";
 import "./App.scss";
-import { Creators, Games, Home, MyBag, MyLibrary, Stores } from "./screens";
+import { Home, Games, MyBag, MyLibrary } from "./screens";
 import { gamesData } from "./utils/constants";
 import { Game } from "./Types";
 import { useSelector } from "react-redux";
@@ -12,8 +12,6 @@ const App = () => {
 
   const homeRef = useRef<HTMLDivElement>(null);
   const gamesRef = useRef<HTMLDivElement>(null);
-  const storesRef = useRef<HTMLDivElement>(null);
-  const creatorsRef = useRef<HTMLDivElement>(null);
   const myLibraryRef = useRef<HTMLDivElement>(null);
   const myBagRef = useRef<HTMLDivElement>(null);
 
@@ -26,16 +24,6 @@ const App = () => {
     {
       name: "games",
       ref: gamesRef,
-      active: false,
-    },
-    {
-      name: "stores",
-      ref: storesRef,
-      active: false,
-    },
-    {
-      name: "creators",
-      ref: creatorsRef,
       active: false,
     },
     {
@@ -88,8 +76,6 @@ const App = () => {
           {games && games.length > 0 && (
             <Games games={games} reference={gamesRef} />
           )}
-          {games && games.length > 0 && <Stores reference={storesRef} />}
-          {games && games.length > 0 && <Creators reference={creatorsRef} />}
           {games && games.length > 0 && (
             <MyLibrary myLibrary={myLibrary} reference={myLibraryRef} />
           )}

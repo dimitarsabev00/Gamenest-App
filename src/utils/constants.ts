@@ -7,10 +7,6 @@ import Halo from "../dummy-api-data/halo-infinite-bg.jpeg";
 import FortniteSpiderMan from "../dummy-api-data/fortnite-bg.jpeg";
 import Diablo3 from "../dummy-api-data/diablo-3-bg.jpeg";
 
-
-export const BASE_URL = "https://api.rawg.io/api/";
-export const API_KEY = "d88f7e104e5240a5a9812cdb4ce173c8";
-
 export const navListItems = [
   { _id: 1, target: "home", name: "Home", icon: "bi-house-door", active: true },
   {
@@ -20,20 +16,7 @@ export const navListItems = [
     icon: "bi-window-stack",
     active: false,
   },
-  {
-    _id: 3,
-    target: "stores",
-    name: "Stores",
-    icon: "bi-shop-window",
-    active: false,
-  },
-  {
-    _id: 4,
-    target: "creators",
-    name: "Creators",
-    icon: "bi-people",
-    active: false,
-  },
+
   {
     _id: 5,
     target: "myLibrary",
