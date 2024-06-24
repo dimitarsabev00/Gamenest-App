@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   transition: 1s;
+
   .logo {
     font-family: "Bauhaus 93";
     position: relative;
@@ -23,13 +24,26 @@
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
+
+    @media (max-width: 1900px) {
+      font-size: 2.5em;
+    }
+    @media (max-width: 1550px) {
+      font-size: 2em;
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 1.5em;
+    }
   }
+
   .nav {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: 15px;
+
     li a {
       text-decoration: none;
       font-size: 1.2em;
@@ -43,6 +57,7 @@
       padding: 10px 20px;
       width: 100%;
       transition: 0.5s;
+
       &:hover,
       &.active {
         box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -50,6 +65,7 @@
       }
     }
   }
+
   .social {
     position: absolute;
     bottom: 50px;
@@ -58,14 +74,17 @@
     list-style: none;
     gap: 20px;
     transition: 0.5s;
+
     li a {
       text-decoration: none;
       font-size: 1.5rem;
       transition: 0.3s;
+
       &:hover {
         color: $color-second;
       }
     }
+
     li .share {
       background: $color-second;
       padding: 10px;
@@ -73,11 +92,13 @@
       height: 35px;
       border-radius: 50%;
       transition: 0.3s;
+
       &:hover {
         background: $color-primary;
       }
     }
   }
+
   &.active {
     width: 7%;
     transition: 1s;
